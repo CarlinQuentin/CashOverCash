@@ -1,15 +1,13 @@
 import React from 'react';
 import '../App.css';
 
-class Header extends React.Component {
-    render(){
+function Header(){
       return(
         <div>
             <h1 className={"header-txt"}>
-              Cash Over Cash
+              Cash On Cash
             </h1>
         </div>
       )
-    }
   }
 export default Header;

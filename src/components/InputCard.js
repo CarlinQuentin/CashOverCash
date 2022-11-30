@@ -2,18 +2,16 @@ import React from 'react';
 import '../App.css';
 import InputFields from './InputFields'
 
-class InputCard extends React.Component {
-    render(){
+function InputCard(props){
       return(
         <div>
           <div>
             <InputFields
-                handleChange={this.props.handleChange}
+                handleChange={props.handleChange}
             />
           </div>
         </div>
       )
-    }
   }
 
 export default InputCard;
