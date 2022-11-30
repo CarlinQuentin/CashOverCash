@@ -8,6 +8,7 @@ function InputCard(props){
           <div>
             <InputFields
                 handleChange={props.handleChange}
+                handleSubmit={props.handleSubmit}
             />
           </div>
         </div>

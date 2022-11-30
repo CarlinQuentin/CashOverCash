@@ -33,9 +33,8 @@ code {
 .input-card {
   box-shadow: 1px 1px 10px 1px;
   height: 100%;
-  width: 60%;
+  width: 50%;
   margin: auto;
-  margin-bottom: 1%;
   margin-top: 10vh;
 }
 
@@ -44,6 +43,36 @@ code {
   margin: auto;
   margin-bottom: 5%;
   height: 5vh;
+}
+
+.button {
+  background-color: rgb(75, 181, 67);
+  color: white;
+  height: 5vh;
+  width: 20vw;
+  border-radius: 15px;
+  margin-top: 2vh;
+  margin-bottom: 5vh;
+  font-size: 20px;
+}
+.button:hover {
+  height: 5.5vh;
+  width: 20.5vw;
+
+}
+
+.resultsCard {
+  box-shadow: 1px 1px 10px 1px;
+  width: 50%;
+  margin: auto;
+  margin-top: 5vh;
+  height: 30vh;
+  margin-bottom: 5vh;
+}
+
+.results {
+  text-align: left;
+  margin-left: 5%;
 }
 
 

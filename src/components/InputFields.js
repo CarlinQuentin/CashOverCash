@@ -4,7 +4,10 @@ import '../App.css';
 
 function InputFields(props) {
         return(
-          <form className={'form'}>  
+          <form className={'form'}                
+          onSubmit={(e) => {
+            e.preventDefault()
+          }}>  
             <h3>Property Value</h3>
                <CurrencyInput
                   onKeyPress={(event) => {
@@ -12,7 +15,7 @@ function InputFields(props) {
                     event.preventDefault();
                   }
                 }}
-                 className={"input-fields"} prefix="$" name="propertyValue" placeholder="Property Value" onChange={props.handleChange}/>          
+                 className={"input-fields"} prefix="$" name="propertyValue" placeholder="Property Value" onValueChange={props.handleChange}/>          
             <h3>Down Payment</h3>
                <CurrencyInput
                   onKeyPress={(event) => {
@@ -20,7 +23,7 @@ function InputFields(props) {
                     event.preventDefault();
                   }
                 }}
-                className={"input-fields"} prefix="$" decimalsLimit={2} name="downPayment" placeholder="Down Payment" onChange={props.handleChange}/>
+                className={"input-fields"} prefix="$" name="downPayment" placeholder="Down Payment" onValueChange={props.handleChange}/>
             <h3>Mortgage Payment</h3> 
               <CurrencyInput 
                  onKeyPress={(event) => {
@@ -28,7 +31,7 @@ function InputFields(props) {
                     event.preventDefault();
                   }
                 }}
-                className={"input-fields"} prefix="$" decimalsLimit={2} name="mortgagePayment" placeholder="Mortgage Payment" onChange={props.handleChange}/>
+                className={"input-fields"} prefix="$" name="mortgagePayment" placeholder="Mortgage Payment" onValueChange={props.handleChange}/>
             <h3>Maintainance</h3> 
               <CurrencyInput 
                  onKeyPress={(event) => {
@@ -36,15 +39,18 @@ function InputFields(props) {
                     event.preventDefault();
                   }
                 }}
-                className={"input-fields"} prefix="$" decimalsLimit={2} name="maintainance" placeholder="Maintainance" onChange={props.handleChange}/>
+                className={"input-fields"} prefix="$" name="maintainance" placeholder="Maintainance" onValueChange={props.handleChange}/>
             <h3>Rent</h3>
-               <input
+               <CurrencyInput
                   onKeyPress={(event) => {
                   if (!/[0-9]/.test(event.key)) {
                     event.preventDefault();
                   }
                 }}
-                className={"input-fields"} name="rent" placeholder="Income" onChange={props.handleChange}/>
+                className={"input-fields"} prefix="$" name="rent" placeholder="Income" onValueChange={props.handleChange}/>
+                <br />
+                <button 
+                type={"submit"} onClick={props.handleSubmit} className={"button"}>Submit</button>
           </form>
         )
     }

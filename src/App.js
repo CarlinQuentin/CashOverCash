@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import InputCard from './components/InputCard';
 import Header from './components/Header';
 import {useState} from 'react'
+import ResultsCard from './components/ResultsCard';
 
 
   function App(){
@@ -13,34 +14,26 @@ import {useState} from 'react'
       mortgagePayment: 0,
       maintainance: 0,
       rent: 0,
-      roi: 0,
-      cashFlow: 0,
     })
+    const [roi, setRoi] = useState()
+    const [cashFlow, setCashFlow] = useState()
 
-
-    useEffect(() => {
-      console.log(inputData.propertyValue)
-      console.log(inputData.rent)
-    })
-
-  function updateRoi() {
-      setInputData({...inputData, roi: "5%"})
-    }
-
-  function updateCashFlow() {
-    const recurringYearlyCost = (inputData.mortgagePayment * 12) + (inputData.maintainance * 12)
-    setInputData({
-      ...inputData, cashFlow: parseInt(200)
-      }, updateRoi())
-    }
-
-  function handleChange(e) {
-    const value = e.target.value.replace("$", '') 
+  function handleChange(value, name) {
     if(value === "" || value < 0){
-      setInputData({...inputData, [e.target.name]: parseInt(0)})
+      setInputData({...inputData, [name]: parseInt(0)})
     }else{
-      setInputData({...inputData, [e.target.name]: parseInt(value)})
+      setInputData({...inputData, [name]: parseInt(value)})
     }
+  }
+
+  function handleSubmit(){
+    let recurringCost = (inputData.maintainance*12)+(inputData.mortgagePayment*12)
+    let totalSpent = inputData.downPayment + recurringCost
+    let income = inputData.rent * 12 
+    let returnPercent = ((income-recurringCost)/totalSpent)
+
+    setRoi(Math.round(returnPercent * 100))
+    setCashFlow(inputData.rent-(recurringCost/12))
   }
 
 
@@ -52,7 +45,11 @@ import {useState} from 'react'
           <div className={"input-card"}>
           <InputCard
             handleChange={handleChange}
+            handleSubmit={handleSubmit}
             />
+            </div>
+            <div className={'resultsCard'}>
+            <ResultsCard roi={roi} cashFlow={cashFlow}/>
           </div>
           </div>
   );
