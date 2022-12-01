@@ -17,6 +17,23 @@ import ResultsCard from './components/ResultsCard';
     })
     const [roi, setRoi] = useState()
     const [cashFlow, setCashFlow] = useState()
+    const [interestRate, setInrerestRate] = useState(.05)
+    const [loanDuration, setLoanDuration] = useState(10)
+
+
+  useEffect(() => {
+    console.log(inputData)
+    let loanTotal = (inputData.propertyValue - inputData.downPayment)
+    let monthlyInterest = interestRate/12
+    let monthlyDuration = loanDuration*12
+
+    let monthlyPayment = loanTotal*((monthlyInterest*(1+monthlyInterest)**monthlyDuration)/((1+monthlyInterest)**monthlyDuration-1))
+    setInputData({...inputData, [inputData.mortgagePayment]: parseInt(monthlyPayment)})
+  }, [inputData.propertyValue, inputData.downPayment])
+
+  useEffect(() => {
+    console.log(inputData.mortgagePayment)
+  }, [inputData.mortgagePayment])
 
   function handleChange(value, name) {
     if(value === "" || value < 0){
@@ -25,6 +42,8 @@ import ResultsCard from './components/ResultsCard';
       setInputData({...inputData, [name]: parseInt(value)})
     }
   }
+
+
 
   function handleSubmit(){
     let recurringCost = (inputData.maintainance*12)+(inputData.mortgagePayment*12)
@@ -46,6 +65,7 @@ import ResultsCard from './components/ResultsCard';
           <InputCard
             handleChange={handleChange}
             handleSubmit={handleSubmit}
+            mortgagePayment={inputData.mortgagePayment}
             />
             </div>
             <div className={'resultsCard'}>

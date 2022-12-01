@@ -31,7 +31,7 @@ function InputFields(props) {
                     event.preventDefault();
                   }
                 }}
-                className={"input-fields"} prefix="$" name="mortgagePayment" placeholder="Mortgage Payment" onValueChange={props.handleChange}/>
+                className={"input-fields"} defaultValue={props.mortgagePayment} prefix="$" name="mortgagePayment" placeholder="Mortgage Payment" onValueChange={props.handleChange}/>
             
             <h3>Maintainance</h3> 
               <CurrencyInput 

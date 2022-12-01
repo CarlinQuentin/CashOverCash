@@ -9,6 +9,7 @@ function InputCard(props){
             <InputFields
                 handleChange={props.handleChange}
                 handleSubmit={props.handleSubmit}
+                mortgagePayment={props.mortgagePayment}
             />
           </div>
         </div>
