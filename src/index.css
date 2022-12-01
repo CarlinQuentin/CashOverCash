@@ -33,7 +33,7 @@ code {
 .input-card {
   box-shadow: 1px 1px 10px 1px;
   height: 100%;
-  width: 80%;
+  width: 50%;
   margin: auto;
   margin-top: 10vh;
 }
@@ -63,7 +63,7 @@ code {
 
 .resultsCard {
   box-shadow: 1px 1px 10px 1px;
-  width: 80%;
+  width: 50%;
   margin: auto;
   margin-top: 5vh;
   height: 30vh;
@@ -76,7 +76,23 @@ code {
 }
 
 
-
+@media screen and (max-width:750px){
+  .input-card {
+    box-shadow: 1px 1px 10px 1px;
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    margin-top: 10vh;
+  }
+  .resultsCard {
+    box-shadow: 1px 1px 10px 1px;
+    width: 80%;
+    margin: auto;
+    margin-top: 5vh;
+    height: 30vh;
+    margin-bottom: 5vh;
+  }
+}
 
 
 

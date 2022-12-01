@@ -32,6 +32,7 @@ function InputFields(props) {
                   }
                 }}
                 className={"input-fields"} prefix="$" name="mortgagePayment" placeholder="Mortgage Payment" onValueChange={props.handleChange}/>
+            
             <h3>Maintainance</h3> 
               <CurrencyInput 
                  onKeyPress={(event) => {
