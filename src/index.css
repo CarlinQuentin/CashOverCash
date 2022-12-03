@@ -114,6 +114,11 @@ code {
     height: 30vh;
     margin-bottom: 5vh;
   }
+  .moreDets{
+    height: 4vh;
+    width: 15%;
+    text-align: center;
+  }
 }
 
 
