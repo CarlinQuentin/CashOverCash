@@ -31,8 +31,6 @@ import ResultsCard from './components/ResultsCard';
     let insurance = (inputData.propertyValue*.0035)/12
     let finalMonthlyPayment = mortgage + taxes + insurance
 
-    console.log(interestRate)
-
     if(!(finalMonthlyPayment > 0)){
       setInputData({...inputData, mortgagePayment: parseInt(0)})
 
