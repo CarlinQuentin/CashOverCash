@@ -42,7 +42,31 @@ code {
   width: 50%;
   margin: auto;
   margin-bottom: 5%;
+  height: 4vh;
+}
+
+.mortgage-input {
+  width: 40%;
+  margin: auto;
+  margin-bottom: 5%;
+  height: 4vh;
+}
+
+.moreDets{
   height: 5vh;
+  width: 10%;
+  text-align: center;
+}
+
+.mortgage-label{
+  display: inline-block;
+  align-items: right;
+}
+
+.mortgage-calculator{
+  display: inline;
+  width: 35px;
+  margin-top: 2%
 }
 
 .button {
@@ -50,7 +74,6 @@ code {
   color: white;
   height: 5vh;
   width: 20vw;
-  border-radius: 15px;
   margin-top: 2vh;
   margin-bottom: 5vh;
   font-size: 20px;
@@ -74,7 +97,6 @@ code {
   text-align: left;
   margin-left: 5%;
 }
-
 
 @media screen and (max-width:750px){
   .input-card {

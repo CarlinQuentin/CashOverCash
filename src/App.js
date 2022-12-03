@@ -4,6 +4,7 @@ import InputCard from './components/InputCard';
 import Header from './components/Header';
 import {useState} from 'react'
 import ResultsCard from './components/ResultsCard';
+import { type } from '@testing-library/user-event/dist/type';
 
 
   function App(){
@@ -17,33 +18,46 @@ import ResultsCard from './components/ResultsCard';
     })
     const [roi, setRoi] = useState()
     const [cashFlow, setCashFlow] = useState()
-    const [interestRate, setInrerestRate] = useState(.05)
-    const [loanDuration, setLoanDuration] = useState(10)
+    const [interestRate, setInrerestRate] = useState(.078)
+    const [loanDuration, setLoanDuration] = useState(30)
+    const [hidden, setHidden] = useState(true)
 
 
   useEffect(() => {
-    console.log(inputData)
     let loanTotal = (inputData.propertyValue - inputData.downPayment)
     let monthlyInterest = interestRate/12
     let monthlyDuration = loanDuration*12
 
-    let monthlyPayment = loanTotal*((monthlyInterest*(1+monthlyInterest)**monthlyDuration)/((1+monthlyInterest)**monthlyDuration-1))
-    setInputData({...inputData, [inputData.mortgagePayment]: parseInt(monthlyPayment)})
-  }, [inputData.propertyValue, inputData.downPayment])
+    console.log(loanTotal)
+
+    let mortgage = loanTotal*((monthlyInterest*(1+monthlyInterest)**monthlyDuration)/((1+monthlyInterest)**monthlyDuration-1))
+    let taxes = (inputData.propertyValue*.02)/12
+    let insurance = (inputData.propertyValue*.0035)/12
+    let finalMonthlyPayment = mortgage + taxes + insurance
+
+    if(!(finalMonthlyPayment > 0)){
+      setInputData({...inputData, mortgagePayment: parseInt(0)})
+
+    }else{ 
+      setInputData({...inputData, mortgagePayment: parseInt(finalMonthlyPayment)})
+    }
+  }, [inputData.propertyValue, inputData.downPayment, interestRate, loanDuration])
 
   useEffect(() => {
-    console.log(inputData.mortgagePayment)
   }, [inputData.mortgagePayment])
 
   function handleChange(value, name) {
-    if(value === "" || value < 0){
+    if(!(value > 0)){
+      console.log("Less than 0")
       setInputData({...inputData, [name]: parseInt(0)})
     }else{
       setInputData({...inputData, [name]: parseInt(value)})
     }
   }
 
-
+  function handleClick(){
+    setHidden(!hidden)
+  }
 
   function handleSubmit(){
     let recurringCost = (inputData.maintainance*12)+(inputData.mortgagePayment*12)
@@ -55,6 +69,15 @@ import ResultsCard from './components/ResultsCard';
     setCashFlow(inputData.rent-(recurringCost/12))
   }
 
+  function updateInterestRate(e){
+    console.log("This was called")
+    setInrerestRate(e.target.value/100)
+  }
+
+  function updateLoanDuration(e){
+    console.log("Loan Duration called")
+    setLoanDuration(e.target.value)
+  }
 
       return (
         <div className="App">
@@ -65,6 +88,12 @@ import ResultsCard from './components/ResultsCard';
           <InputCard
             handleChange={handleChange}
             handleSubmit={handleSubmit}
+            updateInterestRate={updateInterestRate}
+            updateLoanDuration={updateLoanDuration}
+            handleClick={handleClick}
+            interestRate={interestRate}
+            loanDuration={loanDuration}
+            hidden={hidden}
             mortgagePayment={inputData.mortgagePayment}
             />
             </div>

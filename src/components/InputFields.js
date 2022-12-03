@@ -25,14 +25,21 @@ function InputFields(props) {
                 }}
                 className={"input-fields"} prefix="$" name="downPayment" placeholder="Down Payment" onValueChange={props.handleChange}/>
             <h3>Mortgage Payment</h3> 
-              <CurrencyInput 
+              <CurrencyInput
                  onKeyPress={(event) => {
                   if (!/[0-9]/.test(event.key)) {
                     event.preventDefault();
                   }
                 }}
-                className={"input-fields"} defaultValue={props.mortgagePayment} prefix="$" name="mortgagePayment" placeholder="Mortgage Payment" onValueChange={props.handleChange}/>
-            
+                className={"mortgage-input"} key={props.mortgagePayment}  defaultValue={props.mortgagePayment} prefix="$" name="mortgagePayment" placeholder="Mortgage Payment" onValueChange={props.handleChange} />
+                <button className={"moreDets"} onClick={props.handleClick}>Info</button> 
+            <div hidden={props.hidden}>
+              <form>
+              <label className={"mortgage-label"}>Interest Rate:</label><input className={"mortgage-calculator"} defaultValue={props.interestRate*100} onChange={props.updateInterestRate}></input>%
+              <br></br>
+              <label className={"mortgage-label"}>Loan Duration:</label><input className={"mortgage-calculator"} defaultValue={props.loanDuration} onChange={props.updateLoanDuration}></input> Years
+              </form>
+            </div>
             <h3>Maintainance</h3> 
               <CurrencyInput 
                  onKeyPress={(event) => {
