@@ -3,6 +3,20 @@ import CurrencyInput from 'react-currency-input-field';
 import '../App.css';
 
 function InputFields(props) {
+let mortgageDefault, downPaymentDefault
+        if(!(props.mortgagePayment > 0)){
+           mortgageDefault = null
+        }else{
+           mortgageDefault = props.mortgagePayment
+        }
+
+        if(!(props.downPayment > 0)){
+          downPaymentDefault = null
+        }else {
+          downPaymentDefault = props.downPayment
+        }
+        console.log(mortgageDefault)
+
         return(
           <form className={'form'}                
           onSubmit={(e) => {
@@ -23,7 +37,7 @@ function InputFields(props) {
                     event.preventDefault();
                   }
                 }}
-                className={"input-fields"} prefix="$" name="downPayment" placeholder="Down Payment" onValueChange={props.handleChange}/>
+                className={"input-fields"} prefix="$" name="downPayment" value={downPaymentDefault} placeholder="Down Payment" onValueChange={props.handleChange}/>
             <h3>Mortgage Payment</h3> 
               <CurrencyInput
                  onKeyPress={(event) => {
@@ -31,7 +45,7 @@ function InputFields(props) {
                     event.preventDefault();
                   }
                 }}
-                className={"mortgage-input"} key={props.mortgagePayment}  defaultValue={props.mortgagePayment} prefix="$" name="mortgagePayment" placeholder="Mortgage Payment" onValueChange={props.handleChange} />
+                className={"mortgage-input"} value={mortgageDefault} prefix="$" name="mortgagePayment" placeholder="Mortgage Payment" onValueChange={props.handleChange} />
                 <button className={"moreDets"} onClick={props.handleClick}>Info</button> 
             <div hidden={props.hidden}>
               <form>

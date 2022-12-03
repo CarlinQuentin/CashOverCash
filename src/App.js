@@ -40,11 +40,11 @@ import ResultsCard from './components/ResultsCard';
   }, [inputData.propertyValue, inputData.downPayment, interestRate, loanDuration])
 
   useEffect(() => {
-  }, [inputData.mortgagePayment])
+    setInputData({...inputData, downPayment: parseInt(inputData.propertyValue*.2)})
+  }, [inputData.propertyValue])
 
   function handleChange(value, name) {
     if(!(value > 0)){
-      console.log("Less than 0")
       setInputData({...inputData, [name]: parseInt(0)})
     }else{
       setInputData({...inputData, [name]: parseInt(value)})
@@ -95,6 +95,7 @@ import ResultsCard from './components/ResultsCard';
             interestRate={interestRate}
             loanDuration={loanDuration}
             hidden={hidden}
+            downPayment={inputData.downPayment}
             mortgagePayment={inputData.mortgagePayment}
             />
             </div>

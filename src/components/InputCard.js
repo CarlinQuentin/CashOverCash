@@ -14,6 +14,7 @@ function InputCard(props){
                 updateLoanDuration={props.updateLoanDuration}
                 interestRate={props.interestRate}
                 loanDuration={props.loanDuration}
+                downPayment={props.downPayment}
                 hidden={props.hidden}
                 mortgagePayment={props.mortgagePayment}
             />
