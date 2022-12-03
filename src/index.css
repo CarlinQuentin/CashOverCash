@@ -46,7 +46,7 @@ code {
 }
 
 .mortgage-input {
-  width: 40%;
+  width: 35%;
   margin: auto;
   margin-bottom: 5%;
   height: 4vh;
@@ -54,7 +54,7 @@ code {
 
 .moreDets{
   height: 5vh;
-  width: 10%;
+  width: 15%;
   text-align: center;
 }
 
