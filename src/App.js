@@ -4,7 +4,6 @@ import InputCard from './components/InputCard';
 import Header from './components/Header';
 import {useState} from 'react'
 import ResultsCard from './components/ResultsCard';
-import { type } from '@testing-library/user-event/dist/type';
 
 
   function App(){
@@ -27,13 +26,12 @@ import { type } from '@testing-library/user-event/dist/type';
     let loanTotal = (inputData.propertyValue - inputData.downPayment)
     let monthlyInterest = interestRate/12
     let monthlyDuration = loanDuration*12
-
-    console.log(loanTotal)
-
     let mortgage = loanTotal*((monthlyInterest*(1+monthlyInterest)**monthlyDuration)/((1+monthlyInterest)**monthlyDuration-1))
     let taxes = (inputData.propertyValue*.02)/12
     let insurance = (inputData.propertyValue*.0035)/12
     let finalMonthlyPayment = mortgage + taxes + insurance
+
+    console.log(interestRate)
 
     if(!(finalMonthlyPayment > 0)){
       setInputData({...inputData, mortgagePayment: parseInt(0)})
@@ -70,13 +68,18 @@ import { type } from '@testing-library/user-event/dist/type';
   }
 
   function updateInterestRate(e){
-    console.log("This was called")
+    if(!(e.target.value > .001)){
+      console.log('interest rate too low')
+      setInrerestRate(parseInt(0))
+    }
     setInrerestRate(e.target.value/100)
   }
 
   function updateLoanDuration(e){
-    console.log("Loan Duration called")
-    setLoanDuration(e.target.value)
+    if(!(e.target.value > 0)){
+      setLoanDuration(parseInt(0))
+    }
+    setLoanDuration(parseInt(e.target.value))
   }
 
       return (

@@ -35,7 +35,7 @@ function InputFields(props) {
                 <button className={"moreDets"} onClick={props.handleClick}>Info</button> 
             <div hidden={props.hidden}>
               <form>
-              <label className={"mortgage-label"}>Interest Rate:</label><input type={"number"} className={"mortgage-calculator"} defaultValue={props.interestRate*100} onChange={props.updateInterestRate}></input>%
+              <label className={"mortgage-label"}>Interest Rate:</label><input className={"mortgage-calculator"} defaultValue={props.interestRate*100} onChange={props.updateInterestRate}></input>%
               <br></br>
               <label className={"mortgage-label"}>Loan Duration:</label><input type={"number"} className={"mortgage-calculator"} defaultValue={props.loanDuration} onChange={props.updateLoanDuration}></input> Years
               </form>
