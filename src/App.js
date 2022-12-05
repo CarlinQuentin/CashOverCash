@@ -67,7 +67,6 @@ import ResultsCard from './components/ResultsCard';
 
   function updateInterestRate(e){
     if(!(e.target.value > 0)){
-      console.log('interest rate too low')
       setInrerestRate(parseInt(0))
     }
     setInrerestRate(e.target.value/100)
