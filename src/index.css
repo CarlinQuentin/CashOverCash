@@ -30,6 +30,7 @@ code {
   line-height: 7vh;
 }
 
+
 .input-card {
   box-shadow: 1px 1px 10px 1px;
   height: 100%;
@@ -66,7 +67,10 @@ code {
 .mortgage-calculator{
   display: inline;
   width: 35px;
-  margin-top: 2%
+}
+.details-input{
+  width: 35px;
+  margin-top: 2%;
 }
 
 .button {

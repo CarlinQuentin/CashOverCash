@@ -49,9 +49,11 @@ let mortgageDefault, downPaymentDefault
                 className={"mortgage-input"} value={mortgageDefault} prefix="$" name="mortgagePayment" placeholder="Mortgage Payment" onValueChange={props.handleChange} />
                 <button className={"moreDets"} onClick={props.handleClick}>Info</button> 
             <div hidden={props.hidden}>
-              <label className={"mortgage-label"}>Interest Rate:</label><input type={"number"} className={"mortgage-calculator"} defaultValue={props.interestRate*100} onChange={props.updateInterestRate}></input>%
+              <div className={"mortgage-calculator"}>
+              <label className={"mortgage-label"}>Interest Rate:</label><input type={"number"}  step={".01"} className={"details-input"} defaultValue={props.interestRate*100} onChange={props.updateInterestRate}></input>%
               <br></br>
-              <label className={"mortgage-label"}>Loan Duration:</label><input type={"number"} className={"mortgage-calculator"} defaultValue={props.loanDuration} onChange={props.updateLoanDuration}></input> Years
+              <label className={"mortgage-label"}>Loan Duration:</label><input type={"number"} className={"details-input"} defaultValue={props.loanDuration} onChange={props.updateLoanDuration}></input> Years
+              </div>
             </div>
             <h3>Maintainance</h3> 
               <CurrencyInput 
