@@ -18,7 +18,7 @@
     "react-currency-input-field": "^3.6.9",
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.0",
-    "react-router-dom": "^6.3.0",
+    "react-router-dom": "^6.4.5",
     "react-scripts": "^5.0.1",
     "recharts": "^2.1.14",
     "web-vitals": "^2.1.4"
