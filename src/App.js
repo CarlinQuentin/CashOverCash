@@ -11,7 +11,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
     <Router >
       <Header />
       <nav className={"nav-bar"}>
-        <Link className={"link-btn"} to="/cash-on-cash">Calculator</Link>
+        <Link className={"link-btn"} to="/cash-on-cash">Calculator</Link>|
         <Link className={"link-btn"} to="/cash-on-cash/propertySearch">Search</Link>
       </nav>
       <Routes>

@@ -23,21 +23,17 @@ code {
  }
 
 .link-btn {
+  margin: auto;
   display: inline-block;
   color: white;
   background-color: grey;
   text-decoration: none;
-  width: 10vw;
+  width: 15;
   text-align: center;
-  padding: .5%;
+  padding: 1vh;
   font-size: medium;
-  font: bold;
+  font-weight: bold;
 }
-
-.link-btn:hover{
-  color: rgb(40, 40, 40);
-}
-
 
 .header{
   width: 100%;
@@ -114,9 +110,6 @@ code {
   font-size: 20px;
   border: 1px solid grey;
 }
-.button:hover {
-  color: rgb(40, 40, 40);
-}
 
 .search-btn{
   display: inline-block;
@@ -128,9 +121,16 @@ code {
   border: 1px solid grey;
   border-radius: 0;
 }
-
-.search-btn:hover {
-  color: rgb(40, 40, 40);
+@media screen and (min-width:750px){
+  .search-btn:hover {
+    color: rgb(40, 40, 40);
+  }
+  .button:hover {
+    color: rgb(40, 40, 40);
+  }
+  .link-btn:hover{
+    color: rgb(40, 40, 40);
+  }
 }
 
 .resultsCard {
@@ -183,7 +183,7 @@ code {
     height: 100%;
     width: 80%;
     margin: auto;
-    margin-top: 10vh;
+    margin-top: 15vh;
   }
   .resultsCard {
     box-shadow: 1px 1px 10px 1px;
@@ -199,9 +199,15 @@ code {
     text-align: center;
   }
   .link-btn {
+    display: inline-block;
+    text-align: center;
     margin-left: 10vw;
-    margin-right: 5vw;
+    margin-right: 10vw;
   }
+  .nav-bar {
+    text-align: center;
+    margin: auto;
+   }
 }
 
 
