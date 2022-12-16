@@ -15,7 +15,6 @@ let mortgageDefault, downPaymentDefault
         }else {
           downPaymentDefault = props.downPayment
         }
-        console.log(mortgageDefault)
 
         return(
           <form className={'form'}             

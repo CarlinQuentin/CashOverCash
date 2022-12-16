@@ -18,7 +18,6 @@ function PropertySearch(){
   }
 
   function handleSubmit(){
-    console.log(search)
     setResults({...results, address: search})
   }
 

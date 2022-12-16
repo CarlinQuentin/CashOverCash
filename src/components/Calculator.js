@@ -19,7 +19,6 @@ const [inputData, setInputData] = useState({
   const [loanDuration, setLoanDuration] = useState(30)
   const [hidden, setHidden] = useState(true)
 
-
   useEffect(() => {
     let loanTotal = (inputData.propertyValue - inputData.downPayment)
     let monthlyInterest = interestRate/12
@@ -61,6 +60,8 @@ const [inputData, setInputData] = useState({
 
     setRoi(Math.round(returnPercent * 100))
     setCashFlow(inputData.rent-(recurringCost/12))
+    const element = document.getElementById('scroll')
+    element.scrollIntoView({behavior: 'smooth'})
   }
 
   function updateInterestRate(e){
@@ -93,7 +94,7 @@ const [inputData, setInputData] = useState({
             mortgagePayment={inputData.mortgagePayment}
             />
             </div>
-            <div className={'resultsCard'}>
+            <div id={'scroll'} className={'resultsCard'}>
             <ResultsCard roi={roi} cashFlow={cashFlow}/>
           </div>
         </div>
