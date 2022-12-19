@@ -94,9 +94,9 @@ code {
 
 .mortgage-calculator{
   margin: auto;
-  width: 50%;
+  width: 100%;
+  margin-left: 25%;
   text-align: left;
-  border: 1px solid black;
   overflow: hidden;
 }
 .details-input{
@@ -213,7 +213,7 @@ code {
   .input-card {
     box-shadow: 1px 1px 10px 1px;
     height: 100%;
-    width: 90%;
+    width: 80%;
     margin: auto;
     margin-top: 15vh;
   }
