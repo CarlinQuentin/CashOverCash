@@ -26,7 +26,7 @@ function App(){
     if(+pin === +REACT_APP_PIN){
       setLogIn(!logIn)
     }else{
-      alert(`Invalid Pin ${REACT_APP_PIN}`)
+      alert(`Invalid Pin`)
     }
   }
 
