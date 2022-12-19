@@ -7,7 +7,6 @@ import PageNotFound from './components/PageNotFound';
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import {useState, useEffect} from 'react'
 
-
 function App(){
 
   const[logIn, setLogIn] = useState(false)
@@ -23,11 +22,11 @@ function App(){
 
   const handleClick = (e) => {
     e.preventDefault()
-    let myPin = 4578
-    if(pin === myPin){
+    const {REACT_APP_PIN} = process.env
+    if(+pin === +REACT_APP_PIN){
       setLogIn(!logIn)
     }else{
-      alert("Invalid Pin")
+      alert(`Invalid Pin ${REACT_APP_PIN}`)
     }
   }
 
