@@ -51,7 +51,7 @@ let mortgageDefault, downPaymentDefault
               <div className={"mortgage-calculator"}>
                 <label className={"mortgage-label"}>Interest Rate:</label><input type={"number"}  step={".01"} className={"details-input"} defaultValue={props.interestRate*100} onChange={props.updateInterestRate}></input>%
                 <br></br>
-                <label className={"mortgage-label"}>Loan Duration:</label><input type={"number"} className={"details-input"} defaultValue={props.loanDuration} onChange={props.updateLoanDuration}></input> Years
+                <label className={"mortgage-label"}>Loan Duration:</label><input type={"number"} className={"details-input"} defaultValue={props.loanDuration} onChange={props.updateLoanDuration}></input>/Yrs
               </div>
             </div>
             <h3>Maintainance</h3> 

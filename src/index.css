@@ -96,6 +96,8 @@ code {
   margin: auto;
   width: 50%;
   text-align: left;
+  border: 1px solid black;
+  overflow: hidden;
 }
 .details-input{
   width: 35px;
@@ -185,11 +187,33 @@ code {
   height: 20vh;
 }
 
+.pin{
+  width: 10vw;
+  height: 10vh;
+  font-size: 300%;
+}
+
+.log-in{
+  margin-top: 20vh;
+  width: 100%;
+  text-align: center;
+}
+.page-not-found{
+  margin-top: 20vh;
+  width: 100%;
+  text-align: center;
+}
+
+.pin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 @media screen and (max-width:750px){
   .input-card {
     box-shadow: 1px 1px 10px 1px;
     height: 100%;
-    width: 80%;
+    width: 90%;
     margin: auto;
     margin-top: 15vh;
   }
@@ -216,25 +240,7 @@ code {
     text-align: center;
     margin: auto;
    }
+   .pin{
+    width: 30vw;
+  }
 }
-.log-in{
-  margin-top: 20vh;
-  width: 100%;
-  text-align: center;
-}
-.page-not-found{
-  margin-top: 20vh;
-  width: 100%;
-  text-align: center;
-}
-
-.pin{
-  width: 10vw;
-  height: 10vh;
-  font-size: 300%;
-}
-.pin::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
