@@ -48,7 +48,8 @@ const [inputData, setInputData] = useState({
     }
   }
 
-  function handleClick(){
+  function handleClick(e){
+    e.preventDefault()
     setHidden(!hidden)
   }
 
@@ -77,7 +78,6 @@ const [inputData, setInputData] = useState({
     }
     setLoanDuration(parseInt(e.target.value))
   }
-
   return(
         <div>
           <div className={"input-card"}>

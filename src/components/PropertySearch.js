@@ -1,9 +1,9 @@
 import React from 'react';
 import '../App.css';
 import {useState, useEffect} from 'react'
+import Login from './Login'
 
-
-function PropertySearch(){
+function PropertySearch(props){
 
   const [search, setSearch] = useState()
   const [results, setResults] = useState({
@@ -20,6 +20,13 @@ function PropertySearch(){
   function handleSubmit(){
     setResults({...results, address: search})
   }
+  if(!props.logInOut) {
+    console.log("This was hit")
+    return <Login
+    handlePinChange={props.handlePinChange}
+    handleClick={props.handleClick}
+    />
+  }else{
 
   if(!results.address){
     return(
@@ -31,7 +38,7 @@ function PropertySearch(){
       }}> 
       <div className={"search-w-btn"}>
         <input className={"search-bar"} onChange={handleChange} type="text" placeholder="Search.."/>
-        <button type={"submit"} className={"search-btn"}>Search</button>
+        <button type={"submit"} className={"search-btn"}>search</button>
       </div> 
       </form>
       </div>
@@ -46,7 +53,7 @@ function PropertySearch(){
         }}> 
         <div className={"search-w-btn"}>
           <input className={"search-bar"} onChange={handleChange} type="text" placeholder="Search.."/>
-          <button type={"submit"} className={"search-btn"}>Search</button>
+          <button type={"submit"} className={"search-btn"}>search</button>
         </div> 
         </form>
         <div className={'search-results'}>
@@ -58,5 +65,6 @@ function PropertySearch(){
       )
   }
   }
+}
 
 export default PropertySearch;

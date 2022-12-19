@@ -93,13 +93,20 @@ code {
 }
 
 .mortgage-calculator{
-  display: inline;
-  width: 35px;
+  margin: auto;
+  width: 50%;
+  text-align: left;
 }
 .details-input{
   width: 35px;
   margin-top: 2%;
 }
+
+.details-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 
 .button {
   background-color: rgb(75, 181, 67);
@@ -202,15 +209,32 @@ code {
   .link-btn {
     display: inline-block;
     text-align: center;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 3vw;
+    margin-right: 4vw;
   }
   .nav-bar {
     text-align: center;
     margin: auto;
    }
 }
+.log-in{
+  margin-top: 20vh;
+  width: 100%;
+  text-align: center;
+}
+.page-not-found{
+  margin-top: 20vh;
+  width: 100%;
+  text-align: center;
+}
 
-
-
+.pin{
+  width: 10vw;
+  height: 10vh;
+  font-size: 300%;
+}
+.pin::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
